@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<title>Český chřest a Mělnický křen – rozcestník</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&amp;family=Bitter:wght@600;700;800&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#2E4A26}a:hover{color:#1E1D19}
+</style>
+</helmet>
+<div style="font-family: 'Instrument Sans', 'Segoe UI', system-ui, sans-serif; color: #1E1D19; background: #F7F3EA">
+
+<div style="background: #1E1D19; color: #FFFFFF">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(16px, 4vw, 40px); padding-right: clamp(16px, 4vw, 40px); box-sizing: border-box; padding-top: 10px; padding-bottom: 10px; display: flex; gap: 12px; align-items: center; justify-content: center; flex-wrap: wrap; font-size: 15px; font-weight: 600">
+<span style="width: 10px; height: 10px; border-radius: 50%; background: {{dot}}; flex-shrink: 0"></span>
+<span>{{strip}}</span>
+<a href="#na-farme" style="color: #B7D36B; font-weight: 700">Jak k nám</a>
+</div>
+</div>
+
+<header style="position: sticky; top: 0; z-index: 10; background: #F7F3EA; border-bottom: 1px solid #E2DBCB">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(16px, 4vw, 40px); padding-right: clamp(16px, 4vw, 40px); box-sizing: border-box; padding-top: 14px; padding-bottom: 14px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap">
+<a href="#uvod" style="display: flex; align-items: center; gap: 14px; text-decoration: none; color: #1E1D19" aria-label="Úvod">
+<img src="assets/21cea52645170fd0ec870512d2a22b71.png" alt="Český chřest" style="height: 40px; width: auto; display: block">
+<span style="width: 1px; height: 34px; background: #CFC6B3"></span>
+<img src="assets/7515213c24efc074fffd98e275f8f2fd.png" alt="Mělnický křen" style="height: 44px; width: auto; display: block">
+</a>
+<nav aria-label="Hlavní navigace" style="display: flex; gap: 26px; flex-wrap: wrap; font-weight: 600; font-size: 16px">
+<a href="Main.dc.html" style="text-decoration: none; color: #1E1D19">Český chřest</a>
+<a href="Kren.dc.html" style="text-decoration: none; color: #1E1D19">Mělnický křen</a>
+<a href="#na-farme" style="text-decoration: none; color: #1E1D19">Na farmě</a>
+<a href="#kde-koupit" style="text-decoration: none; color: #1E1D19">Kde koupit</a>
+<a href="#kontakt" style="text-decoration: none; color: #1E1D19">Kontakt</a>
+</nav>
+<a href="Eshop.dc.html" style="display: inline-flex; align-items: center; gap: 8px; min-height: 46px; padding: 0 20px; border-radius: 999px; background: #1E1D19; color: #FFFFFF; font-weight: 700; text-decoration: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h10.2L20 8H6.2"></path><circle cx="9" cy="19.5" r="1.5"></circle><circle cx="17" cy="19.5" r="1.5"></circle></svg>E-shop</a>
+</div>
+</header>
+
+<section id="uvod" style="scroll-margin-top: 80px">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(16px, 4vw, 40px); padding-right: clamp(16px, 4vw, 40px); box-sizing: border-box; padding-top: 56px; padding-bottom: 72px; display: flex; flex-direction: column; gap: 36px">
+<div style="display: flex; flex-direction: column; gap: 14px; max-width: 860px">
+<span style="font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #2E4A26">Farma v Hostíně u Vojkovic · Mělnicko</span>
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', 'Helvetica Neue', Helvetica, sans-serif; font-weight: 800; font-size: clamp(40px, 5.6vw, 76px); line-height: 1; letter-spacing: -0.035em">Dvě zeleniny z&nbsp;jedné farmy. pěstujeme křen a chřest</h1>
+<p style="margin: 0; font-size: 19px; line-height: 1.55; color: #4A4740; max-width: 40em">Na polích pod Mělníkem pěstujeme chřest i křen – plodiny, které k české kuchyni odjakživa patří a které dnes většinou putují z dovozu. Vyberte si, kam se chcete podívat.</p>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap: 24px">
+
+<article style="background: #FFFFFF; border-radius: 28px; overflow: hidden; display: flex; flex-direction: column">
+<div style="position: relative">
+<img src="assets/b404c40ef15adf4daef6598be2883adb.jpg" alt="Svazek čerstvě sklizeného bílého chřestu nad polem v Hostíně" style="display: block; width: 100%; height: 340px; object-fit: cover; object-position: 45% 55%;">
+<div style="position: absolute; left: 0; right: 0; bottom: 0; background: {{band.bg}}; color: {{band.fg}}; padding: 16px 24px; display: flex; align-items: center; gap: 14px">
+<span aria-hidden="true" style="width: 14px; height: 14px; border-radius: 50%; background: {{band.dot}}; border: 2px solid {{band.fg}}; box-sizing: border-box; flex-shrink: 0"></span>
+<span style="display: flex; flex-direction: column; gap: 2px"><strong style="font-family: 'Bricolage Grotesque', 'Helvetica Neue', Helvetica, sans-serif; font-weight: 800; font-size: 24px; line-height: 1.1; letter-spacing: -0.01em">{{band.title}}</strong><span style="font-size: 16px; font-weight: 600">{{band.sub}}</span></span>
+</div>
+</div>
+<div style="padding: 28px 32px 32px; display: flex; flex-direction: column; gap: 16px; flex-grow: 1">
+<img src="assets/21cea52645170fd0ec870512d2a22b71.png" alt="Český chřest" style="height: 64px; width: auto; align-self: flex-start">
+<p style="margin: 0; font-size: 17px; line-height: 1.55; color: #4A4740">Ručně sbíraný bílý a zelený chřest z největší české chřestové farmy. V sezóně ho prodáváme přímo u pole, každý květen pořádáme Chřestové a křenové slavnosti.</p>
+<div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto; padding-top: 8px">
+<a href="Main.dc.html" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 24px; border-radius: 999px; background: #2E4A26; color: #FFFFFF; font-weight: 700; font-size: 16px; text-decoration: none;">Vstoupit do světa chřestu<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+</div>
+</article>
+
+<article style="background: #FFFFFF; border-radius: 28px; overflow: hidden; display: flex; flex-direction: column">
+<div style="position: relative">
+<img src="assets/59a525ef9b811fdb9879f628c49dc4e2.jpg" alt="Pěstitel nese čerstvě vyoraný kořen křenu přes pole v Hostíně" style="display: block; width: 100%; height: 340px; object-fit: cover; object-position: 50% 45%;">
+<div style="position: absolute; left: 0; right: 0; bottom: 0; background: {{krenBg}}; color: #FFFFFF; padding: 16px 24px; display: flex; align-items: center; gap: 14px">
+<span aria-hidden="true" style="width: 14px; height: 14px; border-radius: 50%; background: {{krenDot}}; border: 2px solid #FFFFFF; box-sizing: border-box; flex-shrink: 0"></span>
+<span style="display: flex; flex-direction: column; gap: 2px"><strong style="font-family: 'Bricolage Grotesque', 'Helvetica Neue', Helvetica, sans-serif; font-weight: 800; font-size: 24px; line-height: 1.1; letter-spacing: -0.01em">{{krenTitle}}</strong><span style="font-size: 16px; font-weight: 600">{{krenSub}}</span></span>
+</div>
+</div>
+<div style="padding: 28px 32px 32px; display: flex; flex-direction: column; gap: 16px; flex-grow: 1">
+<img src="assets/7515213c24efc074fffd98e275f8f2fd.png" alt="Mělnický křen" style="height: 76px; width: auto; align-self: flex-start">
+<p style="margin: 0; font-size: 17px; line-height: 1.55; color: #4A4740">Od roku 2022 vracíme křen na česká pole. Poctivý kořen s říznou silou, oceněný značkou Regionální potravina Středočeského kraje 2024.</p>
+<div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto; padding-top: 8px">
+<a href="Kren.dc.html" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 24px; border-radius: 999px; background: #473832; color: #FFFFFF; font-weight: 700; font-size: 16px; text-decoration: none;">Vstoupit do světa křenu<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+</div>
+</article>
+
+</div>
+</div>
+</section>
+
+<section id="eshop" style="background: #EEE8DB; scroll-margin-top: 80px">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(16px, 4vw, 40px); padding-right: clamp(16px, 4vw, 40px); box-sizing: border-box; padding-top: 80px; padding-bottom: 80px; display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 720px">
+<span style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap"><span style="font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #2E4A26">E-shop</span><span style="background: {{eshopBadgeBg}}; color: #1E1D19; font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 999px">{{eshopBadge}}</span></span>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', 'Helvetica Neue', Helvetica, sans-serif; font-weight: 800; font-size: clamp(34px, 4vw, 54px); line-height: 1; letter-spacing: -0.03em">Chuť farmy i mimo sezónu</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.55; color: #4A4740">Trvanlivé dobroty z našeho chřestu a křenu, které vydrží ve spíži celý rok.</p>
+</div>
+<a href="Eshop.dc.html" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 24px; border-radius: 999px; background: #1E1D19; color: #FFFFFF; font-weight: 700; font-size: 16px; text-decoration: none;">{{eshopCta}}<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px">
+<a href="Eshop.dc.html" style="background: #FFFFFF; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; text-decoration: none; color: #1E1D19">
+<img src="assets/aba24c52ca366913500348f6fdfa0ae1.jpg" alt="Sklenice nakládaného bílého chřestu" style="display: block; width: 100%; height: 200px; object-fit: cover; object-position: 50% 50%;">
+<span style="padding: 18px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #2E4A26">Český chřest</span>
+<span style="font-weight: 700; font-size: 18px; line-height: 1.3">Nakládaný chřest bílý i zelený</span>
+<span style="font-size: 15px; line-height: 1.45; color: #4A4740">Ručně plněný chřest z Hostína ve sklenici.</span>
+</span>
+</a>
+<a href="Eshop.dc.html" style="background: #FFFFFF; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; text-decoration: none; color: #1E1D19">
+<img src="assets/7bff5c8208f1ee00cf53518f6f4871eb.jpg" alt="Kelímky marinovaného zelí s Mělnickým křenem" style="display: block; width: 100%; height: 200px; object-fit: cover; object-position: 50% 55%;">
+<span style="padding: 18px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #473832">Mělnický křen</span>
+<span style="font-weight: 700; font-size: 18px; line-height: 1.3">Marinované zelí s Mělnickým křenem</span>
+<span style="font-size: 15px; line-height: 1.45; color: #4A4740">Krouhané zelí ochucené naším křenem.</span>
+</span>
+</a>
+<a href="Eshop.dc.html" style="background: #FFFFFF; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; text-decoration: none; color: #1E1D19">
+<img src="assets/ef51c6ca5e077b8aa83882b3195b3f96.jpg" alt="Velká třílitrová sklenice nakládaného bílého chřestu vedle menších sklenic" style="display: block; width: 100%; height: 200px; object-fit: cover; object-position: 20% 50%;">
+<span style="padding: 18px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #2E4A26">Český chřest</span>
+<span style="font-weight: 700; font-size: 18px; line-height: 1.3">Nakládaný bílý chřest MAXI 3 l</span>
+<span style="font-size: 15px; line-height: 1.45; color: #4A4740">Gastro balení pro restaurace i velké oslavy.</span>
+</span>
+</a>
+<a href="Eshop.dc.html" style="background: #FFFFFF; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; text-decoration: none; color: #1E1D19">
+<span style="display: block; height: 200px; overflow: hidden;"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" aria-hidden="true" style="display: block"><rect width="400" height="300" fill="#EEF1E7"></rect><rect x="140" y="70" width="120" height="196" rx="22" fill="none" stroke="#B9C4A6" stroke-width="4" stroke-dasharray="10 10"></rect><path d="M200 140 v56 M172 168 h56" stroke="#8C9A7A" stroke-width="6" stroke-linecap="round"></path></svg></span>
+<span style="padding: 18px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #4A4740">Z farmy</span>
+<span style="font-weight: 700; font-size: 18px; line-height: 1.3">Další produkty brzy</span>
+<span style="font-size: 15px; line-height: 1.45; color: #4A4740">[DOPLNIT podle sortimentu]</span>
+</span>
+</a>
+</div>
+</div>
+</section>
+
+<section id="na-farme" style="scroll-margin-top: 80px">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(16px, 4vw, 40px); padding-right: clamp(16px, 4vw, 40px); box-sizing: border-box; padding-top: 80px; padding-bottom: 80px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 40px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 20px">
+<span style="font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #2E4A26">Na farmě</span>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', 'Helvetica Neue', Helvetica, sans-serif; font-weight: 800; font-size: clamp(32px, 3.6vw, 48px); line-height: 1.05; letter-spacing: -0.025em">Přijeďte si pro chřest i křen přímo k nám</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px">
+<div style="background: #FFFFFF; border-radius: 18px; padding: 20px; display: flex; flex-direction: column; gap: 8px">
+<span style="display: flex; gap: 8px; align-items: center; font-weight: 700; color: #2E4A26"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Otevírací doba</span>
+<strong style="font-size: 20px">{{hours}}</strong>
+<span style="font-size: 15px; line-height: 1.45; color: #4A4740">{{hoursNote}}</span>
+</div>
+<div style="background: #FFFFFF; border-radius: 18px; padding: 20px; display: flex; flex-direction: column; gap: 8px">
+<span style="display: flex; gap: 8px; align-items: center; font-weight: 700; color: #2E4A26"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Adresa</span>
+<strong style="font-size: 20px">{{place}}</strong>
+<span style="font-size: 15px; line-height: 1.45; color: #4A4740">Zemědělský areál Hostín u Vojkovic, 277 44</span>
+</div>
+</div>
+<div style="display: flex; gap: 10px; flex-wrap: wrap">
+<a href="{{mapHref}}" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 24px; border-radius: 999px; background: #B7D36B; color: #1E1D19; font-weight: 700; font-size: 16px; text-decoration: none;">Navigovat na farmu</a>
+<a href="tel:+420736610089" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 24px; border-radius: 999px; background: transparent; color: #1E1D19; font-weight: 700; font-size: 16px; text-decoration: none; border: 2px solid #1E1D19; box-sizing: border-box;">736 610 089</a>
+</div>
+<span style="font-size: 14px; color: #4A4740">Telefon je aktivní v sezóně chřestu.</span>
+</div>
+<div style="position: relative">
+<img src="assets/6663c5acff0ea940a345135299f975c8.jpg" alt="Bedny s čerstvě svázaným zeleným chřestem" style="display: block; width: 100%; height: 420px; object-fit: cover; object-position: 50% 60%; border-radius: 28px;">
+<a href="Main.dc.html" style="position: absolute; right: 20px; bottom: 20px; left: 20px; max-width: 360px; margin-left: auto; background: #5B2A55; color: #FFFFFF; border-radius: 18px; padding: 18px 20px; display: flex; flex-direction: column; gap: 4px; text-decoration: none">
+<span style="font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; font-size: 12px; color: #D9EAA6">Každý rok v květnu</span>
+<strong style="font-size: 19px; line-height: 1.25">Chřestové a křenové slavnosti</strong>
+<span style="font-size: 14px; opacity: 0.9">Vstup zdarma · program na webu Českého chřestu</span>
+</a>
+</div>
+</div>
+</section>
+
+<section id="kde-koupit" style="background: #FFFFFF; scroll-margin-top: 80px">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(16px, 4vw, 40px); padding-right: clamp(16px, 4vw, 40px); box-sizing: border-box; padding-top: 72px; padding-bottom: 72px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<span style="font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #473832">Kde nás koupíte</span>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', 'Helvetica Neue', Helvetica, sans-serif; font-weight: 800; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.05; letter-spacing: -0.025em">Na farmě, v obchodech a brzy i online</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px">
+<div style="background: #F7F3EA; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+<strong style="font-size: 19px">Přímo na farmě</strong>
+<span style="font-size: 16px; line-height: 1.5; color: #4A4740">Čerstvý chřest v sezóně, křen, nakládaný chřest a zelí s křenem v areálu v Hostíně.</span>
+</div>
+<div style="background: #F7F3EA; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+<strong style="font-size: 19px">Mělnický křen v obchodech</strong>
+<div style="display: flex; gap: 8px; flex-wrap: wrap">
+<span style="background: #FFFFFF; border: 1px solid #E2DBCB; border-radius: 10px; padding: 8px 12px; font-weight: 700">Albert</span>
+<span style="background: #FFFFFF; border: 1px solid #E2DBCB; border-radius: 10px; padding: 8px 12px; font-weight: 700">Globus</span>
+<span style="background: #FFFFFF; border: 1px solid #E2DBCB; border-radius: 10px; padding: 8px 12px; font-weight: 700">BILLA</span>
+<span style="background: #FFFFFF; border: 1px solid #E2DBCB; border-radius: 10px; padding: 8px 12px; font-weight: 700">MAKRO</span>
+<span style="background: #FFFFFF; border: 1px solid #E2DBCB; border-radius: 10px; padding: 8px 12px; font-weight: 700">JIP Potraviny</span><span style="background: #FFFFFF; border: 1px solid #E2DBCB; border-radius: 10px; padding: 8px 12px; font-weight: 700">Penny</span><span style="background: #FFFFFF; border: 1px solid #E2DBCB; border-radius: 10px; padding: 8px 12px; font-weight: 700">Tesco</span><span style="background: #FFFFFF; border: 1px solid #E2DBCB; border-radius: 10px; padding: 8px 12px; font-weight: 700">Lidl</span>
+</div>
+</div>
+<div style="background: #F7F3EA; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+<strong style="font-size: 19px">Brzy v našem e-shopu</strong>
+<span style="font-size: 16px; line-height: 1.5; color: #4A4740">Chystáme – už brzy tu objednáte trvanlivé produkty s doručením domů nebo s vyzvednutím na farmě.</span>
+<a href="Eshop.dc.html" style="font-weight: 700; display: inline-flex; align-items: center; gap: 8px; min-height: 44px">Do e-shopu<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+</div>
+</div>
+</section>
+
+<section style="background: #B7D36B">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(16px, 4vw, 40px); padding-right: clamp(16px, 4vw, 40px); box-sizing: border-box; padding-top: 48px; padding-bottom: 48px; display: flex; justify-content: space-between; align-items: center; gap: 28px; flex-wrap: wrap">
+<div style="display: flex; flex-direction: column; gap: 8px; max-width: 560px">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', 'Helvetica Neue', Helvetica, sans-serif; font-weight: 800; font-size: 34px; line-height: 1.05; letter-spacing: -0.02em">Novinky z farmy e-mailem</h2>
+<span style="font-size: 17px">Start sezóny chřestu, slavnosti, nové produkty v e-shopu. Pár e-mailů za rok.</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px; flex: 1 1 360px; max-width: 520px">
+<label for="r-email" style="font-weight: 700; font-size: 15px">Váš e-mail</label>
+<div style="display: flex; gap: 8px; flex-wrap: wrap">
+<input id="r-email" type="email" placeholder="jmeno@email.cz" style="flex: 1 1 220px; min-height: 52px; padding: 0 18px; border-radius: 999px; border: 2px solid #1E1D19; background: #FFFFFF; font-family: inherit; font-size: 16px; color: #1E1D19; box-sizing: border-box">
+<button type="button" style="min-height: 52px; padding: 0 26px; border-radius: 999px; border: 0; background: #1E1D19; color: #FFFFFF; font-family: inherit; font-size: 16px; font-weight: 700; cursor: pointer">Odebírat</button>
+</div>
+</div>
+</div>
+</section>
+
+<footer id="kontakt" style="background: #1E1D19; color: #FFFFFF; scroll-margin-top: 80px">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(16px, 4vw, 40px); padding-right: clamp(16px, 4vw, 40px); box-sizing: border-box; padding-top: 64px; padding-bottom: 36px; display: flex; flex-direction: column; gap: 36px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; font-size: 15px; line-height: 1.6">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<img src="assets/78f68d6b44f395da1ae0c56a82132460.png" alt="Český chřest" style="height: 52px; width: auto; align-self: flex-start">
+<span style="background: #FFFFFF; border-radius: 12px; padding: 8px 12px; align-self: flex-start"><img src="assets/7515213c24efc074fffd98e275f8f2fd.png" alt="Mělnický křen" style="height: 52px; width: auto; display: block"></span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; font-size: 12px; color: #D9EAA6">Provozovatel</span>
+<span>Český chřest, s.r.o.<br>K Holi 786, Rozkoš<br>252 43 Průhonice<br>IČO 63670011</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; font-size: 12px; color: #D9EAA6">Kontakt</span>
+<a href="mailto:info@ceskychrest.cz" style="color: #FFFFFF">info@ceskychrest.cz</a>
+<a href="mailto:info@melnickykren.cz" style="color: #FFFFFF">info@melnickykren.cz</a>
+<a href="tel:+420736610089" style="color: #FFFFFF">736 610 089</a>
+<span style="opacity: 0.75; font-size: 14px">Pro média: Jan Charvát, <a href="tel:+420608827381" style="color: #FFFFFF">608 827 381</a>, <a href="mailto:charvat@ceskychrest.cz" style="color: #FFFFFF">charvat@ceskychrest.cz</a></span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; font-size: 12px; color: #D9EAA6">Weby</span>
+<a href="Main.dc.html" style="color: #FFFFFF">Český chřest</a>
+<a href="Kren.dc.html" style="color: #FFFFFF">Mělnický křen</a>
+<a href="Eshop.dc.html" style="color: #FFFFFF">E-shop</a>
+<a href="https://www.facebook.com/ceskychrest" style="color: #FFFFFF">Facebook Český chřest</a>
+<a href="https://www.facebook.com/melnickykren" style="color: #FFFFFF">Facebook Mělnický křen</a>
+<a href="https://www.instagram.com/ceskychrest" style="color: #FFFFFF">Instagram</a>
+</div>
+</div>
+<div style="border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: 20px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 14px; opacity: 0.8">
+<span>© Český chřest, s.r.o.</span>
+<span>Obchodní podmínky · Ochrana osobních údajů · Cookies</span>
+</div>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"obdobi": {"editor": "enum", "options": ["automaticky", "mimo_sezonu", "sezona_chrestu"], "default": "automaticky", "section": "Stav"}, "obdobiKren": {"editor": "enum", "options": ["automaticky", "mimo_sezonu", "sezona_krenu"], "default": "automaticky", "section": "Stav"}, "eshop": {"editor": "enum", "options": ["pripravujeme", "spusteno"], "default": "pripravujeme", "section": "Stav"}, "$preview": {"width": 1440, "height": 4200}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const obdobi = this.props.obdobi ?? 'automaticky';
+    const eshop = this.props.eshop ?? 'pripravujeme';
+    // automaticky = podle termínů z administrace (Nastavení sezóny); v návrhu zjednodušeně duben–červen
+    const month = new Date().getMonth() + 1;
+    const inSeason = obdobi === 'automaticky' ? (month >= 4 && month <= 6) : obdobi === 'sezona_chrestu';
+    // sezóna křenu – v návrhu zjednodušeně říjen–březen; přesné termíny z administrace
+    const obdobiKren = this.props.obdobiKren ?? 'automaticky';
+    const krenSeason = obdobiKren === 'automaticky' ? (month >= 10 || month <= 3) : obdobiKren === 'sezona_krenu';
+    const hoursNow = inSeason ? '7–17 h' : '9–16 h';
+    const live = eshop === 'spusteno';
+    return {
+      dot: inSeason ? '#B7D36B' : '#BF935B',
+      strip: inSeason
+        ? 'Sezóna chřestu: prodej na farmě denně 7–17 h, i o víkendech a svátcích.'
+        : 'Teď na farmě: křen, nakládaný chřest a zelí s naším křenem – denně 9–16 h.',
+      band: inSeason
+        ? { bg: '#1E7A34', fg: '#FFFFFF', dot: '#FFFFFF', title: 'Je sezóna chřestu – otevřeno', sub: 'Na farmě denně 7–17 h, i o víkendech a svátcích' }
+        : { bg: '#B42318', fg: '#FFFFFF', dot: 'transparent', title: 'Teď není sezóna chřestu', sub: 'Další sezóna začne v dubnu · přesný den oznámíme' },
+      krenBg: krenSeason ? '#1E7A34' : '#B42318',
+      krenDot: krenSeason ? '#FFFFFF' : 'transparent',
+      krenTitle: krenSeason ? 'Je sezóna křenu – otevřeno' : 'Teď není sezóna křenu',
+      krenSub: krenSeason ? 'Čerstvý křen na farmě denně ' + hoursNow : 'Mělnický křen koupíte v obchodech celý rok',
+      hours: inSeason ? 'Denně 7–17 h' : 'Denně 9–16 h',
+      mapHref: inSeason ? 'https://www.google.com/maps/search/?api=1&query=50.2966292%2C14.4016264' : 'https://www.google.com/maps/search/?api=1&query=50.2971247%2C14.4049653',
+      place: inSeason ? 'Prodejní stánek u pole' : 'Prodejní hala v areálu',
+      hoursNote: inSeason ? 'Po celou sezónu chřestu, včetně víkendů a svátků.' : 'Mimo sezónu chřestu: křen a trvanlivé produkty.',
+      eshopBadge: live ? 'Nově otevřeno' : 'Chystáme – už brzy',
+      eshopBadgeBg: live ? '#B7D36B' : '#E2DBCB',
+      eshopCta: live ? 'Nakoupit v e-shopu' : 'Co chystáme'
+    };
+  }
+}
+</script>
+</body>
+</html>

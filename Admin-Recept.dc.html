@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<title>Administrace – recept se štítky zeleniny</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#2E4A26}a:hover{color:#17241A}
+</style>
+</helmet>
+<div style="font-family: 'Instrument Sans', 'Segoe UI', system-ui, sans-serif; color: #17241A; background: #F4F6F0; display: flex; flex-wrap: wrap; min-height: 1300px">
+
+<aside style="flex: 0 0 240px; background: #17241A; color: #FFFFFF; padding: 24px 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 6px">
+<span style="font-family: 'Bricolage Grotesque', 'Helvetica Neue', Helvetica, sans-serif; font-weight: 800; font-size: 20px; padding: 0 10px 18px">Chřest a křen · správa</span>
+<a href="#" style="display: flex; align-items: center; justify-content: center; min-height: 44px; border-radius: 10px; background: #B7D36B; color: #17241A; font-weight: 700; text-decoration: none; margin-bottom: 12px">+ Nová novinka</a>
+<nav aria-label="Správa webu" style="display: flex; flex-direction: column; gap: 2px; font-size: 15px; font-weight: 600">
+<a href="#" style="min-height: 44px; display: flex; align-items: center; padding: 0 12px; border-radius: 10px; color: #FFFFFF; text-decoration: none">Přehled</a>
+<a href="#" style="min-height: 44px; display: flex; align-items: center; padding: 0 12px; border-radius: 10px; color: #FFFFFF; text-decoration: none">Novinky</a>
+<a href="#" aria-current="page" style="min-height: 44px; display: flex; align-items: center; padding: 0 12px; border-radius: 10px; background: rgba(255, 255, 255, 0.14); color: #FFFFFF; text-decoration: none">Recepty</a>
+<a href="#" style="min-height: 44px; display: flex; align-items: center; padding: 0 12px; border-radius: 10px; color: #FFFFFF; text-decoration: none">Události</a>
+<a href="Admin-Sezona.dc.html" style="min-height: 44px; display: flex; align-items: center; padding: 0 12px; border-radius: 10px; color: #FFFFFF; text-decoration: none">Nastavení sezóny</a>
+<a href="#" style="min-height: 44px; display: flex; align-items: center; padding: 0 12px; border-radius: 10px; color: #FFFFFF; text-decoration: none">Fotky a média</a>
+</nav>
+</aside>
+
+<main style="flex: 1 1 640px; padding: 32px clamp(20px, 3vw, 40px); box-sizing: border-box; display: flex; flex-direction: column; gap: 20px; max-width: 1100px">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 14px; color: #4A5547">Recepty › Nový recept</span>
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', 'Helvetica Neue', Helvetica, sans-serif; font-weight: 800; font-size: 34px; letter-spacing: -0.02em">Nový recept</h1>
+</div>
+<div style="display: flex; gap: 10px">
+<button type="button" style="min-height: 46px; padding: 0 18px; border-radius: 10px; border: 1px solid #B9C4A6; background: #FFFFFF; color: #17241A; font-family: inherit; font-size: 15px; font-weight: 700">Uložit koncept</button>
+<button type="button" style="min-height: 46px; padding: 0 20px; border: 0; border-radius: 10px; background: #2E4A26; color: #FFFFFF; font-family: inherit; font-size: 15px; font-weight: 700">Zveřejnit</button>
+</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 20px; align-items: start">
+<div style="grid-column: span 2; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+
+<div style="border: 1px solid #DDE3D2; border-radius: 14px; background: #FFFFFF; padding: 20px 22px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="r-title" style="font-weight: 600; font-size: 14px">Název receptu</label><input id="r-title" type="text" value="Bílý chřest s novými bramborami a koprovkou" style="min-height: 48px; padding: 0 14px; border-radius: 10px; border: 1px solid #B9C4A6; font-family: inherit; font-size: 18px; font-weight: 600"></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="r-perex" style="font-weight: 600; font-size: 14px">Krátký popis</label><textarea id="r-perex" rows="3" placeholder="Dvě tři věty, které se zobrazí na kartě receptu." style="padding: 10px 14px; border-radius: 10px; border: 1px solid #B9C4A6; font-family: inherit; font-size: 15px; resize: vertical"></textarea></div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-weight: 600; font-size: 14px">Hlavní fotka</span>
+<div style="border: 2px dashed #B9C4A6; border-radius: 12px; min-height: 150px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 16px; box-sizing: border-box; color: #4A5547; font-size: 15px">
+<span>Přetáhněte fotku sem</span>
+<button type="button" style="min-height: 44px; padding: 0 16px; border-radius: 10px; border: 1px solid #B9C4A6; background: #FFFFFF; color: #17241A; font-family: inherit; font-size: 14px; font-weight: 700">Vybrat z počítače</button>
+</div>
+</div>
+</div>
+
+<fieldset style="margin: 0; border: 1px solid #DDE3D2; border-radius: 14px; background: #FFFFFF; padding: 20px 22px; display: flex; flex-direction: column; gap: 10px">
+<legend style="font-weight: 700; font-size: 17px; padding: 0 6px">Suroviny</legend>
+<div style="display: grid; grid-template-columns: 140px 1fr 44px; gap: 8px; align-items: center">
+<input type="text" aria-label="Množství 1" placeholder="např. 500 g" style="min-height: 44px; padding: 0 12px; border-radius: 10px; border: 1px solid #B9C4A6; font-family: inherit; font-size: 15px">
+<input type="text" aria-label="Surovina 1" placeholder="např. bílý chřest" style="min-height: 44px; padding: 0 12px; border-radius: 10px; border: 1px solid #B9C4A6; font-family: inherit; font-size: 15px">
+<button type="button" aria-label="Odebrat surovinu 1" style="width: 44px; height: 44px; border-radius: 10px; border: 1px solid #DDE3D2; background: #FFFFFF; color: #4A5547; font-family: inherit; font-size: 18px">×</button>
+</div>
+<div style="display: grid; grid-template-columns: 140px 1fr 44px; gap: 8px; align-items: center">
+<input type="text" aria-label="Množství 2" style="min-height: 44px; padding: 0 12px; border-radius: 10px; border: 1px solid #B9C4A6; font-family: inherit; font-size: 15px">
+<input type="text" aria-label="Surovina 2" style="min-height: 44px; padding: 0 12px; border-radius: 10px; border: 1px solid #B9C4A6; font-family: inherit; font-size: 15px">
+<button type="button" aria-label="Odebrat surovinu 2" style="width: 44px; height: 44px; border-radius: 10px; border: 1px solid #DDE3D2; background: #FFFFFF; color: #4A5547; font-family: inherit; font-size: 18px">×</button>
+</div>
+<button type="button" style="align-self: flex-start; min-height: 44px; padding: 0 14px; border: 0; background: transparent; color: #2E4A26; font-family: inherit; font-size: 15px; font-weight: 700">+ Přidat surovinu</button>
+</fieldset>
+
+<fieldset style="margin: 0; border: 1px solid #DDE3D2; border-radius: 14px; background: #FFFFFF; padding: 20px 22px; display: flex; flex-direction: column; gap: 10px">
+<legend style="font-weight: 700; font-size: 17px; padding: 0 6px">Postup</legend>
+<div style="display: grid; grid-template-columns: 36px 1fr; gap: 10px; align-items: start"><span style="width: 36px; height: 36px; border-radius: 50%; background: #EEF1E7; display: flex; align-items: center; justify-content: center; font-weight: 700">1</span><textarea aria-label="Krok 1" rows="2" placeholder="Popište první krok…" style="padding: 10px 12px; border-radius: 10px; border: 1px solid #B9C4A6; font-family: inherit; font-size: 15px; resize: vertical"></textarea></div>
+<div style="display: grid; grid-template-columns: 36px 1fr; gap: 10px; align-items: start"><span style="width: 36px; height: 36px; border-radius: 50%; background: #EEF1E7; display: flex; align-items: center; justify-content: center; font-weight: 700">2</span><textarea aria-label="Krok 2" rows="2" style="padding: 10px 12px; border-radius: 10px; border: 1px solid #B9C4A6; font-family: inherit; font-size: 15px; resize: vertical"></textarea></div>
+<button type="button" style="align-self: flex-start; min-height: 44px; padding: 0 14px; border: 0; background: transparent; color: #2E4A26; font-family: inherit; font-size: 15px; font-weight: 700">+ Přidat krok</button>
+</fieldset>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 20px">
+<div style="border: 1px solid #DDE3D2; border-radius: 14px; background: #FFFFFF; padding: 20px 22px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="r-time" style="font-weight: 600; font-size: 14px">Doba (min)</label><input id="r-time" type="number" style="min-height: 44px; padding: 0 12px; border-radius: 10px; border: 1px solid #B9C4A6; font-family: inherit; font-size: 15px"></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="r-serv" style="font-weight: 600; font-size: 14px">Porce</label><input id="r-serv" type="number" style="min-height: 44px; padding: 0 12px; border-radius: 10px; border: 1px solid #B9C4A6; font-family: inherit; font-size: 15px"></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="r-src" style="font-weight: 600; font-size: 14px">Autor / zdroj</label><input id="r-src" type="text" placeholder="např. @sklarouvkuchyni" style="min-height: 44px; padding: 0 12px; border-radius: 10px; border: 1px solid #B9C4A6; font-family: inherit; font-size: 15px"></div>
+</div>
+
+<fieldset style="margin: 0; border: 2px solid #2E4A26; border-radius: 14px; background: #FFFFFF; padding: 20px 22px; display: flex; flex-direction: column; gap: 8px">
+<legend style="font-weight: 700; font-size: 17px; padding: 0 6px">Zelenina v receptu</legend>
+<span style="font-size: 14px; color: #4A5547">Zaškrtněte všechno, co v receptu hraje hlavní roli. Podle toho se recept ukáže ve filtru na obou webech.</span>
+<label style="display: flex; gap: 10px; align-items: center; min-height: 32px; font-size: 15px"><input type="checkbox" checked style="width: 20px; height: 20px; margin: 0; accent-color: #2E4A26"><span aria-hidden="true" style="width: 14px; height: 14px; border-radius: 50%; background: #E9DFBF; border: 2px solid #9C8C5A; box-sizing: border-box"></span>Bílý chřest</label>
+<label style="display: flex; gap: 10px; align-items: center; min-height: 32px; font-size: 15px"><input type="checkbox" style="width: 20px; height: 20px; margin: 0; accent-color: #2E4A26"><span aria-hidden="true" style="width: 14px; height: 14px; border-radius: 50%; background: #4F7A2E; border: 2px solid #4F7A2E; box-sizing: border-box"></span>Zelený chřest</label>
+<label style="display: flex; gap: 10px; align-items: center; min-height: 32px; font-size: 15px"><input type="checkbox" style="width: 20px; height: 20px; margin: 0; accent-color: #2E4A26"><span aria-hidden="true" style="width: 14px; height: 14px; border-radius: 50%; background: #8A6232; border: 2px solid #8A6232; box-sizing: border-box"></span>Křen</label>
+<a href="Admin-Zelenina.dc.html" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 44px; font-size: 15px; font-weight: 700">+ Přidat další zeleninu</a>
+</fieldset>
+
+<fieldset style="margin: 0; border: 1px solid #DDE3D2; border-radius: 14px; background: #FFFFFF; padding: 20px 22px; display: flex; flex-direction: column; gap: 10px">
+<legend style="font-weight: 700; font-size: 17px; padding: 0 6px">Zařazení</legend>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="r-kind" style="font-weight: 600; font-size: 14px">Druh jídla</label><select id="r-kind" style="min-height: 44px; padding: 0 12px; border-radius: 10px; border: 1px solid #B9C4A6; background: #FFFFFF; font-family: inherit; font-size: 15px; color: #17241A"><option>Hlavní jídlo</option><option>Polévka</option><option>Salát</option><option>Omáčka, dip a pomazánka</option><option>Sladké</option></select></div>
+<label style="display: flex; gap: 10px; align-items: center; min-height: 32px; font-size: 15px"><input type="checkbox" style="width: 20px; height: 20px; margin: 0; accent-color: #2E4A26">Ze slavností</label>
+<span style="font-size: 13px; color: #4A5547">Štítek „Do 30 minut“ se přidá sám podle doby přípravy.</span>
+</fieldset>
+
+<fieldset style="margin: 0; border: 1px solid #DDE3D2; border-radius: 14px; background: #FFFFFF; padding: 20px 22px; display: flex; flex-direction: column; gap: 12px">
+<legend style="font-weight: 700; font-size: 17px; padding: 0 6px">Hodnocení návštěvníků</legend>
+<div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-size: 15px"><span aria-hidden="true" style="color: #C28A1E; font-size: 20px; letter-spacing: 1px">★★★★★</span><strong>4,5 z 5</strong><span style="color: #4A5547">6 hlasů</span></div>
+<div style="display: grid; grid-template-columns: 26px 1fr 30px; gap: 4px 8px; align-items: center; font-size: 13px; color: #4A5547">
+<span>5★</span><span style="height: 8px; border-radius: 4px; background: #EEF1E7"><span style="display: block; width: 67%; height: 8px; border-radius: 4px; background: #C28A1E"></span></span><span>4</span>
+<span>4★</span><span style="height: 8px; border-radius: 4px; background: #EEF1E7"><span style="display: block; width: 17%; height: 8px; border-radius: 4px; background: #C28A1E"></span></span><span>1</span>
+<span>3★</span><span style="height: 8px; border-radius: 4px; background: #EEF1E7"><span style="display: block; width: 17%; height: 8px; border-radius: 4px; background: #C28A1E"></span></span><span>1</span>
+<span>2★</span><span style="height: 8px; border-radius: 4px; background: #EEF1E7"></span><span>0</span>
+<span>1★</span><span style="height: 8px; border-radius: 4px; background: #EEF1E7"></span><span>0</span>
+</div>
+<label style="display: flex; gap: 10px; align-items: center; font-size: 15px"><input type="checkbox" checked style="width: 20px; height: 20px; margin: 0; accent-color: #2E4A26">Povolit hlasování u tohoto receptu</label>
+<button type="button" style="align-self: flex-start; min-height: 40px; padding: 0 14px; border-radius: 10px; border: 1px solid #B9C4A6; background: #FFFFFF; color: #17241A; font-family: inherit; font-size: 14px; font-weight: 600">Vynulovat hodnocení</button>
+</fieldset>
+
+<fieldset style="margin: 0; border: 1px solid #DDE3D2; border-radius: 14px; background: #FFFFFF; padding: 20px 22px; display: flex; flex-direction: column; gap: 12px">
+<legend style="font-weight: 700; font-size: 17px; padding: 0 6px">Kde se recept ukáže</legend>
+<div style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; line-height: 1.45; color: #17241A; background: #EEF1E7; border-radius: 10px; padding: 12px 14px">
+<span><strong>ceskychrest.cz/recepty</strong> – ve výchozím výběru (má chřest)</span>
+<span><strong>melnickykren.cz/recepty</strong> – po kliknutí na filtr Křen nebo Vše</span>
+</div>
+<label style="display: flex; gap: 10px; align-items: flex-start; font-size: 15px; line-height: 1.4"><input type="checkbox" style="width: 20px; height: 20px; margin: 0; accent-color: #2E4A26; margin-top: 1px"><span><strong>Doporučit na Českém chřestu</strong><br><span style="color: #4A5547">Velká karta na úvodní stránce a první v Receptech.</span></span></label>
+<label style="display: flex; gap: 10px; align-items: flex-start; font-size: 15px; line-height: 1.4"><input type="checkbox" style="width: 20px; height: 20px; margin: 0; accent-color: #2E4A26; margin-top: 1px"><span><strong>Doporučit na Mělnickém křenu</strong><br><span style="color: #4A5547">První v Receptech na webu křenu.</span></span></label>
+</fieldset>
+</div>
+</div>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1300}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

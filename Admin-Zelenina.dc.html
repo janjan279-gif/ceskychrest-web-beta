@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<title>Administrace – štítky zeleniny</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#2E4A26}a:hover{color:#17241A}
+</style>
+</helmet>
+<div style="font-family: 'Instrument Sans', 'Segoe UI', system-ui, sans-serif; color: #17241A; background: #F4F6F0; display: flex; flex-wrap: wrap; min-height: 900px">
+
+<aside style="flex: 0 0 240px; background: #17241A; color: #FFFFFF; padding: 24px 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 6px">
+<span style="font-family: 'Bricolage Grotesque', 'Helvetica Neue', Helvetica, sans-serif; font-weight: 800; font-size: 20px; padding: 0 10px 18px">Chřest a křen · správa</span>
+<a href="#" style="display: flex; align-items: center; justify-content: center; min-height: 44px; border-radius: 10px; background: #B7D36B; color: #17241A; font-weight: 700; text-decoration: none; margin-bottom: 12px">+ Nová novinka</a>
+<nav aria-label="Správa webu" style="display: flex; flex-direction: column; gap: 2px; font-size: 15px; font-weight: 600">
+<a href="#" style="min-height: 44px; display: flex; align-items: center; padding: 0 12px; border-radius: 10px; color: #FFFFFF; text-decoration: none">Přehled</a>
+<a href="#" style="min-height: 44px; display: flex; align-items: center; padding: 0 12px; border-radius: 10px; color: #FFFFFF; text-decoration: none">Novinky</a>
+<a href="#" aria-current="page" style="min-height: 44px; display: flex; align-items: center; padding: 0 12px; border-radius: 10px; background: rgba(255, 255, 255, 0.14); color: #FFFFFF; text-decoration: none">Recepty</a>
+<a href="#" style="min-height: 44px; display: flex; align-items: center; padding: 0 12px; border-radius: 10px; color: #FFFFFF; text-decoration: none">Události</a>
+<a href="Admin-Sezona.dc.html" style="min-height: 44px; display: flex; align-items: center; padding: 0 12px; border-radius: 10px; color: #FFFFFF; text-decoration: none">Nastavení sezóny</a>
+<a href="#" style="min-height: 44px; display: flex; align-items: center; padding: 0 12px; border-radius: 10px; color: #FFFFFF; text-decoration: none">Fotky a média</a>
+</nav>
+</aside>
+
+<main style="flex: 999 1 560px; min-width: 0; padding: 32px clamp(20px, 3vw, 40px); box-sizing: border-box; display: flex; flex-direction: column; gap: 20px; max-width: 1100px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 14px; color: #4A5547"><a href="Admin-Recept.dc.html">Recepty</a> › Štítky zeleniny</span>
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', 'Helvetica Neue', Helvetica, sans-serif; font-weight: 800; font-size: 34px; letter-spacing: -0.02em">Štítky zeleniny</h1>
+<p style="margin: 0; font-size: 16px; line-height: 1.5; color: #4A5547; max-width: 46em">Jeden seznam receptů pro oba weby. Každý štítek je jedno tlačítko ve filtru na stránce Recepty – na ceskychrest.cz i na melnickykren.cz. Nová zelenina se ve filtru objeví, jakmile k ní bude první zveřejněný recept.</p>
+</div>
+
+<div style="border: 1px solid #DDE3D2; border-radius: 14px; background: #FFFFFF; overflow-x: auto">
+<table style="width: 100%; border-collapse: collapse; font-size: 15px; min-width: 640px">
+<thead><tr style="text-align: left; font-size: 13px; color: #4A5547">
+<th scope="col" style="padding: 12px 14px; font-weight: 700">Zelenina</th>
+<th scope="col" style="padding: 12px 14px; font-weight: 700">Adresa filtru</th>
+<th scope="col" style="padding: 12px 14px; font-weight: 700">Výchozí na webu</th>
+<th scope="col" style="padding: 12px 14px; font-weight: 700; text-align: right">Receptů</th>
+<th scope="col" style="padding: 12px 14px"><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Akce</span></th>
+</tr></thead>
+<tbody>
+<tr style="border-top: 1px solid #DDE3D2">
+<td style="padding: 12px 14px"><span style="display: inline-flex; align-items: center; gap: 10px; font-weight: 700"><span aria-hidden="true" style="width: 16px; height: 16px; border-radius: 50%; background: #E9DFBF; border: 2px solid #9C8C5A; box-sizing: border-box"></span>Bílý chřest</span></td>
+<td style="padding: 12px 14px; font-family: ui-monospace, Menlo, monospace; font-size: 14px; color: #4A5547">?zelenina=bily-chrest</td>
+<td style="padding: 12px 14px">Český chřest</td>
+<td style="padding: 12px 14px; text-align: right; font-variant-numeric: tabular-nums">10</td>
+<td style="padding: 6px 14px; text-align: right"><a href="#" aria-label="Upravit štítek Bílý chřest" style="display: inline-flex; align-items: center; min-height: 44px; font-weight: 700">Upravit</a></td>
+</tr>
+<tr style="border-top: 1px solid #DDE3D2">
+<td style="padding: 12px 14px"><span style="display: inline-flex; align-items: center; gap: 10px; font-weight: 700"><span aria-hidden="true" style="width: 16px; height: 16px; border-radius: 50%; background: #4F7A2E; border: 2px solid #4F7A2E; box-sizing: border-box"></span>Zelený chřest</span></td>
+<td style="padding: 12px 14px; font-family: ui-monospace, Menlo, monospace; font-size: 14px; color: #4A5547">?zelenina=zeleny-chrest</td>
+<td style="padding: 12px 14px">Český chřest</td>
+<td style="padding: 12px 14px; text-align: right; font-variant-numeric: tabular-nums">13</td>
+<td style="padding: 6px 14px; text-align: right"><a href="#" aria-label="Upravit štítek Zelený chřest" style="display: inline-flex; align-items: center; min-height: 44px; font-weight: 700">Upravit</a></td>
+</tr>
+<tr style="border-top: 1px solid #DDE3D2">
+<td style="padding: 12px 14px"><span style="display: inline-flex; align-items: center; gap: 10px; font-weight: 700"><span aria-hidden="true" style="width: 16px; height: 16px; border-radius: 50%; background: #8A6232; border: 2px solid #8A6232; box-sizing: border-box"></span>Křen</span></td>
+<td style="padding: 12px 14px; font-family: ui-monospace, Menlo, monospace; font-size: 14px; color: #4A5547">?zelenina=kren</td>
+<td style="padding: 12px 14px">Mělnický křen</td>
+<td style="padding: 12px 14px; text-align: right; font-variant-numeric: tabular-nums">8</td>
+<td style="padding: 6px 14px; text-align: right"><a href="#" aria-label="Upravit štítek Křen" style="display: inline-flex; align-items: center; min-height: 44px; font-weight: 700">Upravit</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<form style="border: 1px solid #DDE3D2; border-radius: 14px; background: #FFFFFF; padding: 20px 22px; display: flex; flex-direction: column; gap: 16px">
+<h2 style="margin: 0; font-size: 19px">Přidat zeleninu</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 14px">
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="z-nazev" style="font-weight: 600; font-size: 14px">Název</label><input id="z-nazev" type="text" placeholder="[název zeleniny]" style="min-height: 44px; padding: 0 12px; border-radius: 10px; border: 1px solid #B9C4A6; font-family: inherit; font-size: 15px; background: #FFFFFF; color: #17241A"></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="z-slug" style="font-weight: 600; font-size: 14px">Adresa filtru</label><input id="z-slug" type="text" placeholder="vyplní se z názvu" style="min-height: 44px; padding: 0 12px; border-radius: 10px; border: 1px solid #B9C4A6; font-family: inherit; font-size: 15px; background: #FFFFFF; color: #17241A"></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="z-web" style="font-weight: 600; font-size: 14px">Výchozí na webu</label><select id="z-web" style="min-height: 44px; padding: 0 12px; border-radius: 10px; border: 1px solid #B9C4A6; font-family: inherit; font-size: 15px; background: #FFFFFF; color: #17241A"><option>Žádný – jen ve filtru</option><option>Český chřest</option><option>Mělnický křen</option></select></div>
+</div>
+<fieldset style="margin: 0; padding: 0; border: 0; display: flex; flex-direction: column; gap: 4px">
+<legend style="font-weight: 600; font-size: 14px; padding: 0 0 6px">Barva tečky</legend>
+<div style="display: flex; gap: 4px; flex-wrap: wrap"><label style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px"><input type="radio" name="z-barva" checked aria-label="Barva cihlová" style="appearance: none; -webkit-appearance: none; width: 30px; height: 30px; margin: 0; border-radius: 50%; background: #C2643A; outline: 2px solid #17241A; outline-offset: 3px; cursor: pointer"></label><label style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px"><input type="radio" name="z-barva" aria-label="Barva fialová" style="appearance: none; -webkit-appearance: none; width: 30px; height: 30px; margin: 0; border-radius: 50%; background: #7B4F9E; outline: 2px solid transparent; outline-offset: 3px; cursor: pointer"></label><label style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px"><input type="radio" name="z-barva" aria-label="Barva hořčicová" style="appearance: none; -webkit-appearance: none; width: 30px; height: 30px; margin: 0; border-radius: 50%; background: #D3A21F; outline: 2px solid transparent; outline-offset: 3px; cursor: pointer"></label><label style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px"><input type="radio" name="z-barva" aria-label="Barva modrá" style="appearance: none; -webkit-appearance: none; width: 30px; height: 30px; margin: 0; border-radius: 50%; background: #2F6E8F; outline: 2px solid transparent; outline-offset: 3px; cursor: pointer"></label></div>
+</fieldset>
+<button type="button" style="align-self: flex-start; min-height: 46px; padding: 0 20px; border: 0; border-radius: 10px; background: #2E4A26; color: #FFFFFF; font-family: inherit; font-size: 15px; font-weight: 700">Přidat štítek</button>
+</form>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

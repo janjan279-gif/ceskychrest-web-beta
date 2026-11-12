@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<title>Recepty – Český chřest (mobil)</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#2E4A26}a:hover{color:#17241A}
+</style>
+</helmet>
+<div style="font-family: 'Instrument Sans', 'Segoe UI', system-ui, sans-serif; color: #17241A; background: #EEF1E7">
+
+<div style="background: #0F1A11; color: #FFFFFF">
+<div style="max-width: 1280px; margin: 0 auto; padding: 6px clamp(16px, 4vw, 40px); box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 14px; font-weight: 600">
+<a href="Rozcestnik.dc.html" style="color: #FFFFFF; display: inline-flex; align-items: center; gap: 6px; min-height: 36px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg>Farma v Hostíně u Vojkovic</a>
+<a href="Kren.dc.html" style="color: #D9B98A; min-height: 36px; display: inline-flex; align-items: center">Také pěstujeme Mělnický křen</a>
+</div>
+</div>
+
+<header style="background: #FFFFFF; border-bottom: 1px solid #E3E7DA">
+<div style="max-width: 1280px; margin: 0 auto; padding: 14px clamp(16px, 4vw, 40px); box-sizing: border-box; display: flex; align-items: center; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap">
+<a href="Main.dc.html" aria-label="Český chřest – úvodní stránka" style="display: flex"><img src="assets/dfeb2b4957f1c09237840390540f261b.jpg" alt="Český chřest" style="height: 56px; width: auto; display: block"></a>
+<nav aria-label="Hlavní navigace" style="display: flex; gap: 10px 24px; flex-wrap: wrap; font-weight: 600; font-size: 16px">
+<a href="Main.dc.html" style="text-decoration: none; color: #17241A">Sezóna a prodej</a>
+<a href="Main.dc.html" style="text-decoration: none; color: #17241A">Novinky</a>
+<a href="Main.dc.html" style="text-decoration: none; color: #17241A">Události</a>
+<a href="#" aria-current="page" style="text-decoration: none; color: #17241A; border-bottom: 3px solid #2E4A26; padding-bottom: 4px">Recepty</a>
+<a href="Main.dc.html" style="text-decoration: none; color: #17241A">O farmě</a>
+<a href="Eshop.dc.html" style="text-decoration: none; color: #17241A">E-shop</a>
+</nav>
+</div>
+</header>
+
+<section style="background: #EEF1E7">
+<div style="max-width: 1280px; margin: 0 auto; padding: 48px clamp(16px, 4vw, 40px) 8px; box-sizing: border-box; display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 14px; color: #3B4738"><a href="Main.dc.html" style="color: #3B4738">Úvod</a> › Recepty</span>
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', 'Helvetica Neue', Helvetica, sans-serif; font-weight: 800; font-size: clamp(38px, 5vw, 68px); line-height: 1; letter-spacing: -0.03em; color: #17241A">Co dnes uvařit z chřestu</h1>
+<p style="margin: 0; font-size: 18px; line-height: 1.55; color: #3B4738; max-width: 44em">Recepty z bílého a zeleného chřestu z naší farmy – a k tomu recepty s Mělnickým křenem, který pěstujeme hned vedle. Vyberte zeleninu nebo jejich kombinaci.</p>
+</div>
+</section>
+
+<section aria-label="Výběr receptů" style="background: #EEF1E7">
+<div style="max-width: 1280px; margin: 0 auto; padding: 24px clamp(16px, 4vw, 40px); box-sizing: border-box">
+<div style="background: #FFFFFF; border-radius: 20px; padding: 20px clamp(16px, 2.4vw, 28px); display: flex; flex-direction: column; gap: 18px">
+
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span id="f-veg" style="font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #5B2A55">Zelenina</span>
+<div role="group" aria-labelledby="f-veg" style="display: flex; gap: 8px; flex-wrap: wrap">
+<button type="button" onClick="{{allVeg.pick}}" aria-pressed="{{allVeg.pressed}}" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border-radius: 999px; font-family: inherit; font-size: 15px; font-weight: 700; cursor: pointer; box-sizing: border-box; border: 2px solid {{allVeg.border}}; background: {{allVeg.bg}}; color: {{allVeg.fg}}">Vše<span style="font-weight: 600; opacity: 0.75">{{allVeg.count}}</span></button>
+<sc-for list="{{vegs}}" as="v" hint-placeholder-count="3">
+<button type="button" onClick="{{v.pick}}" aria-pressed="{{v.pressed}}" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border-radius: 999px; font-family: inherit; font-size: 15px; font-weight: 700; cursor: pointer; box-sizing: border-box; border: 2px solid {{v.border}}; background: {{v.bg}}; color: {{v.fg}}"><span aria-hidden="true" style="width: 14px; height: 14px; border-radius: 50%; background: {{v.dot}}; border: 2px solid {{v.dotLine}}; box-sizing: border-box; flex-shrink: 0"></span>{{v.label}}<span style="font-weight: 600; opacity: 0.75">{{v.count}}</span></button>
+</sc-for>
+</div>
+</div>
+
+<div style="display: flex; gap: 18px 28px; flex-wrap: wrap; align-items: flex-end">
+<div style="display: flex; flex-direction: column; gap: 10px; flex: 1 1 420px; min-width: 0">
+<span id="f-kind" style="font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #5B2A55">Druh jídla</span>
+<div role="group" aria-labelledby="f-kind" style="display: flex; gap: 8px; flex-wrap: wrap">
+<sc-for list="{{kinds}}" as="k" hint-placeholder-count="6">
+<button type="button" onClick="{{k.pick}}" aria-pressed="{{k.pressed}}" style="min-height: 40px; padding: 0 14px; border-radius: 999px; border: 1px solid {{k.border}}; background: {{k.bg}}; color: {{k.fg}}; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer">{{k.label}}</button>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; gap: 8px; flex-wrap: wrap">
+<button type="button" onClick="{{quick.pick}}" aria-pressed="{{quick.pressed}}" style="display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 14px; border-radius: 999px; border: 1px solid {{quick.border}}; background: {{quick.bg}}; color: {{quick.fg}}; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Do 30 minut</button>
+<button type="button" onClick="{{slav.pick}}" aria-pressed="{{slav.pressed}}" style="min-height: 40px; padding: 0 14px; border-radius: 999px; border: 1px solid {{slav.border}}; background: {{slav.bg}}; color: {{slav.fg}}; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Ze slavností</button>
+<button type="button" onClick="{{top.pick}}" aria-pressed="{{top.pressed}}" style="display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 14px; border-radius: 999px; border: 1px solid {{top.border}}; background: {{top.bg}}; color: {{top.fg}}; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer"><span aria-hidden="true" style="color: {{top.star}}">★</span>Nejlépe hodnocené</button>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px; flex: 1 1 240px; max-width: 340px">
+<label for="r-hledat" style="font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #5B2A55">Hledat</label>
+<div style="display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 12px; border-radius: 10px; border: 1px solid #B9C4A6; color: #3B4738"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg><input id="r-hledat" type="search" placeholder="např. rizoto, polévka" style="flex: 1; min-width: 0; border: 0; outline-offset: 4px; background: transparent; font-family: inherit; font-size: 15px; color: #17241A"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section aria-label="Recepty" style="background: #EEF1E7">
+<div style="max-width: 1280px; margin: 0 auto; padding: 8px clamp(16px, 4vw, 40px) 64px; box-sizing: border-box; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap">
+<p aria-live="polite" style="margin: 0; font-size: 16px; font-weight: 600; color: #3B4738">{{summary}}</p>
+<sc-if value="{{filtered}}" hint-placeholder-val="{{false}}">
+<button type="button" onClick="{{reset}}" style="min-height: 44px; padding: 0 6px; border: 0; background: transparent; color: #2E4A26; font-family: inherit; font-size: 15px; font-weight: 700; text-decoration: underline; cursor: pointer">Zrušit filtry</button>
+</sc-if>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 270px), 1fr)); gap: 20px">
+<sc-for list="{{shown}}" as="r" hint-placeholder-count="8">
+<a href="#" style="background: #FFFFFF; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; text-decoration: none; color: #17241A">
+<span style="position: relative; display: block; height: 180px; background: {{r.tile}}">
+<sc-if value="{{r.hasImg}}" hint-placeholder-val="{{true}}">
+<img src="{{r.img}}" alt="{{r.alt}}" style="display: block; width: 100%; height: 180px; object-fit: cover">
+</sc-if>
+<sc-if value="{{r.noImg}}" hint-placeholder-val="{{false}}">
+<span style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; color: #3B4738">[fotka receptu]</span>
+</sc-if>
+<sc-if value="{{r.featured}}" hint-placeholder-val="{{false}}">
+<span style="position: absolute; left: 10px; top: 10px; background: #17241A; color: #FFFFFF; font-size: 12px; font-weight: 700; padding: 5px 10px; border-radius: 999px">Doporučujeme</span>
+</sc-if>
+</span>
+<span style="padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 10px; flex: 1">
+<span style="display: flex; gap: 6px; flex-wrap: wrap">
+<sc-for list="{{r.tags}}" as="t" hint-placeholder-count="1">
+<span style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; padding: 4px 9px; border-radius: 999px; background: {{t.tagBg}}; color: {{t.tagFg}}"><span aria-hidden="true" style="width: 9px; height: 9px; border-radius: 50%; background: {{t.dot}}; border: 1.5px solid {{t.dotLine}}; box-sizing: border-box"></span>{{t.label}}</span>
+</sc-for>
+</span>
+<span style="font-weight: 700; font-size: 18px; line-height: 1.3">{{r.title}}</span>
+<span aria-label="{{r.rateAria}}" style="display: flex; align-items: center; gap: 6px; font-size: 14px; color: #3B4738"><span aria-hidden="true" style="color: #C28A1E; font-size: 17px; letter-spacing: 1px; line-height: 1">{{r.stars}}</span><span aria-hidden="true" style="font-weight: 700; color: #17241A">{{r.rateTxt}}</span><span aria-hidden="true">{{r.rateCount}}</span></span>
+<span style="margin-top: auto; display: flex; gap: 6px 12px; flex-wrap: wrap; align-items: center; font-size: 14px; font-weight: 600; color: #3B4738"><span style="display: inline-flex; align-items: center; gap: 5px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>{{r.timeLabel}}</span><span>{{r.kindLabel}}</span><span style="font-weight: 500">{{r.src}}</span></span>
+</span>
+</a>
+</sc-for>
+</div>
+
+<sc-if value="{{empty}}" hint-placeholder-val="{{false}}">
+<div style="background: #FFFFFF; border-radius: 20px; padding: 40px 24px; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center">
+<strong style="font-size: 20px">Takovou kombinaci zatím nemáme</strong>
+<span style="font-size: 16px; color: #3B4738">Zkuste ubrat některý filtr.</span>
+<button type="button" onClick="{{reset}}" style="min-height: 48px; padding: 0 22px; border: 0; border-radius: 999px; background: #2E4A26; color: #FFFFFF; font-family: inherit; font-size: 16px; font-weight: 700; cursor: pointer">Zobrazit všechny recepty</button>
+</div>
+</sc-if>
+
+<sc-if value="{{hasMore}}" hint-placeholder-val="{{true}}">
+<button type="button" onClick="{{more}}" style="align-self: center; min-height: 52px; padding: 0 28px; border-radius: 999px; border: 2px solid #2E4A26; background: transparent; color: #2E4A26; font-family: inherit; font-size: 16px; font-weight: 700; cursor: pointer">{{moreLabel}}</button>
+</sc-if>
+</div>
+</section>
+
+<sc-if value="{{hasGuides}}" hint-placeholder-val="{{true}}">
+<section aria-labelledby="navody" style="background: #2E4A26; color: #FFFFFF">
+<div style="max-width: 1280px; margin: 0 auto; padding: 48px clamp(16px, 4vw, 40px); box-sizing: border-box; display: flex; flex-direction: column; gap: 20px">
+<h2 id="navody" style="margin: 0; font-family: 'Bricolage Grotesque', 'Helvetica Neue', Helvetica, sans-serif; font-weight: 800; font-size: clamp(28px, 3vw, 38px); line-height: 1.1; letter-spacing: -0.03em">Tipy a návody</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr)); gap: 12px">
+<sc-for list="{{guides}}" as="g" hint-placeholder-count="4">
+<a href="#" style="display: flex; justify-content: space-between; align-items: center; gap: 12px; min-height: 64px; padding: 14px 18px; border-radius: 14px; background: rgba(255, 255, 255, 0.12); color: #FFFFFF; text-decoration: none; box-sizing: border-box"><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.85">{{g.kind}}</span><strong style="font-size: 16px; line-height: 1.3">{{g.title}}</strong></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</sc-for>
+</div>
+</div>
+</section>
+</sc-if>
+
+<footer style="background: #FFFFFF; border-top: 1px solid #E3E7DA">
+<div style="max-width: 1280px; margin: 0 auto; padding: 28px clamp(16px, 4vw, 40px); box-sizing: border-box; display: flex; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; font-size: 14px; color: #3B4738">
+<span>© Český chřest, s.r.o. · Hostín u Vojkovic · <a href="mailto:info@ceskychrest.cz">info@ceskychrest.cz</a></span>
+<span>Recepty sdílíme s webem melnickykren.cz.</span>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":5600}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const T = {"ink": "#17241A", "surface": "#FFFFFF", "line": "#B9C4A6", "chipOn": "#17241A", "primary": "#2E4A26"};
+    const VEG = [{"id": "b", "label": "Bílý chřest", "dot": "#E9DFBF", "dotLine": "#9C8C5A", "chipTint": "#F4EFDF", "tagBg": "#F1EAD3", "tagFg": "#4A4128", "tile": "#EFE7CF"}, {"id": "z", "label": "Zelený chřest", "dot": "#4F7A2E", "dotLine": "#4F7A2E", "chipTint": "#E2EBCF", "tagBg": "#DCE8C4", "tagFg": "#24401C", "tile": "#D5E2BA"}, {"id": "k", "label": "Křen", "dot": "#8A6232", "dotLine": "#8A6232", "chipTint": "#EFE3D1", "tagBg": "#EBDDC8", "tagFg": "#3F3029", "tile": "#E4D3BA"}];
+    const KINDS = [{"id": "polevka", "label": "Polévky"}, {"id": "salat", "label": "Saláty"}, {"id": "predkrm", "label": "Předkrmy"}, {"id": "hlavni", "label": "Hlavní jídla"}, {"id": "omacky", "label": "Omáčky, dipy a pomazánky"}, {"id": "sladke", "label": "Sladké"}];
+    const KIND1 = {"polevka": "Polévka", "salat": "Salát", "predkrm": "Předkrm", "hlavni": "Hlavní jídlo", "omacky": "Omáčka a dip", "sladke": "Sladké"};
+    const GUIDES = [{"title": "Jak poznat čerstvý chřest", "veg": ["b", "z"], "kind": "Návod"}, {"title": "Příprava chřestu před vařením", "veg": ["b", "z"], "kind": "Návod"}, {"title": "Jak na loupání chřestu s Jirkou Šafářem", "veg": ["b"], "kind": "Video"}, {"title": "Skladování chřestu", "veg": ["b", "z"], "kind": "Návod"}, {"title": "Sedm rychlých tipů, jak použít křen", "veg": ["k"], "kind": "Tipy"}];
+    const DATA = [{"id": "bily-brambory", "title": "Bílý chřest s novými bramborami a koprovkou", "veg": ["b"], "time": 30, "kind": "hlavni", "src": "Recept a foto: Klára Michalová (@sklarouvkuchyni)", "slav": false, "img": "assets/9ee68f43e81923e775181724bf0382ae.jpg", "alt": "Mladé brambory s chřestem a vejcem nahniličko"}, {"id": "wafle", "title": "Špenátové wafle s chřestem, zakysanou smetanou a bylinkami", "veg": ["z"], "time": 40, "kind": "hlavni", "src": "Makro akademie", "slav": false, "img": "assets/686bd28e9815f161dc45a74e5a82b05b.jpg", "alt": "Špenátové wafle s chřestem a zakysanou smetanou"}, {"id": "rizoto-slavnosti", "title": "Chřestové rizoto z chřestových slavností", "veg": ["b", "z"], "time": 45, "kind": "hlavni", "src": "Kaufland · Vojta a Beta", "slav": true, "img": "assets/a9556f662da991800cd100653e7d4e7e.jpg", "alt": "Chřestové rizoto se zeleným chřestem"}, {"id": "krkovice", "title": "Grilovaná krkovice, zelný salát s křenem, chřest", "veg": ["z", "k"], "time": 60, "kind": "hlavni", "src": "Makro Akademie", "slav": true, "img": "assets/37cd290ebf53bab1c475c7d8833c0512.jpg", "alt": "Grilovaná krkovice se zelným salátem s křenem"}, {"id": "polevka-hrasek", "title": "Krémová polévka z bílého chřestu s hráškem a česnekovými krutony", "veg": ["b", "z"], "time": 35, "kind": "polevka", "src": "Ladislav Floreán", "slav": false, "img": "assets/abc564c58c6f68d0531f075a3c8b7dcb.jpg", "alt": "Krémová polévka z bílého chřestu s krutony"}, {"id": "pomazanka-kesu", "title": "Chřestová pomazánka s kešu", "veg": ["b", "z"], "time": null, "kind": "omacky", "src": "Bez vaření", "slav": false, "img": "assets/7b8051b25c2ffd03d24f4dbc160c6281.jpg", "alt": "Chřestová pomazánka s kešu na chlebu"}, {"id": "krenex", "title": "Krenex domácí", "veg": ["k"], "time": null, "kind": "omacky", "src": "K masu, rybám i suši", "slav": false, "img": "assets/5464b330e529a4037a33191261d8ac06.jpg", "alt": "Čerstvě nastrouhaný křen a plátky křenu na prkénku"}, {"id": "panna-cotta", "title": "Křenová panna cotta s nakládaným lososem", "veg": ["k"], "time": null, "timeText": "přes noc", "kind": "predkrm", "src": "Recept a foto: Markéta Hrubešová", "slav": false, "img": "assets/ac62455ba27bbce3870fe01bc0a92331.jpg", "alt": "Křenová panna cotta s plátky lososa nakládaného v červené řepě, koprem a brokolicí"}, {"id": "rosti", "title": "Bramborové rösti s křenovým jogurtem a uzenou makrelou", "veg": ["k"], "time": null, "kind": "predkrm", "src": "Recept a foto: Bohdana Kobrová (@muj_rok_v_kuchyni)", "slav": false, "img": "assets/32839e5bfebd14c7b80f30e32db33e3c.jpg", "alt": "Tři bramborové rösti s křenovým jogurtem, uzenou makrelou a salátovými lístky na tmavém talíři"}, {"id": "hraskova", "title": "Hrášková pomazánka s křenem", "veg": ["k"], "time": null, "kind": "omacky", "src": "Recept a foto: Lokálové (@lokalove)", "slav": false, "img": "assets/7494a504140cb6070120c84d0601ffa4.jpg", "alt": "Strouhání křenu do misky s hráškem a mátou a chléb s hráškovou pomazánkou"}, {"id": "krenova-pomazanka", "title": "Křenová pomazánka – variace na klasické šunkové rolky", "veg": ["k"], "time": null, "kind": "omacky", "src": "Recept a foto: paní Růžičková (@paniruzickova)", "slav": false, "img": "assets/d40bcc0b4bf8a2d1d38d32bbc5fbf773.jpg", "alt": "Křenová pomazánka se šunkou a jarní cibulkou v porcelánové misce, vedle šunkové rolky, pletýnka a kořen křenu"}, {"id": "vinna-klobasa", "title": "Vinná klobása s bramborovou kaší s Mělnickým křenem", "veg": ["k"], "time": null, "kind": "hlavni", "src": "Recept a foto: Svatava Coolinářka Vašková (@svatavacoolinarka)", "slav": false, "img": "assets/4c1186225a2fb62b56f9d3504657c898.jpg", "alt": "Smažená vinná klobása stočená do šneka na bramborové kaši se strouhaným křenem"}, {"id": "polevka-repa", "title": "Polévka z červené řepy a batátů s křenovými nočky z ricotty", "veg": ["k"], "time": null, "kind": "polevka", "src": "Recept a foto: Bohdana Kobrová (@muj_rok_v_kuchyni)", "slav": false, "img": "assets/1811de54abb453b4c3fb67ffe6565db6.jpg", "alt": "Krémová polévka z červené řepy s ricottovými nočky, vlašskými ořechy a microgreens"}, {"id": "polevka-parmazan", "title": "Krémová chřestová polévka s parmazánem", "veg": ["z"], "time": 35, "kind": "polevka", "src": "Recept: Forbescooking · foto: Markéta Marešová", "slav": false, "img": "assets/cf18099c7c26773ca5f13f4d59a7a9ac.jpg", "alt": "Zelená krémová chřestová polévka s chřestovými špičkami, krutony a hoblinami parmazánu"}, {"id": "chrest-holandska", "title": "Perfektní chřest s rychlou holandskou omáčkou", "veg": ["z"], "time": 25, "kind": "hlavni", "src": "Recept: Forbescooking", "slav": false, "img": "assets/98fd1625fe285889957aa45782013a73.jpg", "alt": "Zelený chřest se šírovaným vejcem, holandskou omáčkou, křupavou šunkou a pažitkou"}, {"id": "jahodova-polevka", "title": "Studená jahodová polévka s chřestem", "veg": ["b", "z"], "time": 20, "timeText": "20 min + chlazení", "kind": "polevka", "src": "Recept a foto: Bohdana Kobrová (@muj_rok_v_kuchyni)", "slav": false, "img": "assets/9813fff3ccc6892f3ac2da23dd99decb.jpg", "alt": "Studená jahodová polévka se zeleným chřestem, jahodami, bazalkou a praženými pistáciemi"}, {"id": "chrestovo-cuketovy-krem", "title": "Chřestovo-cuketový krém", "veg": ["z"], "time": 45, "kind": "polevka", "src": "Recept a foto: Markéta Hrubešová", "slav": false, "img": "assets/26f596d2548de9ca613766b83eb50750.jpg", "alt": "Zelený chřestovo-cuketový krém servírovaný ve vydlabané kulaté cuketě s parmazánovou oplatkou a špičkou chřestu"}, {"id": "bramboracka", "title": "Bramborová polévka s Mělnickým křenem", "veg": ["k"], "time": null, "kind": "polevka", "src": "Bramboračka, která má říz", "slav": false, "img": "assets/14ffc929d57a9a78f270f55b0ab67a28.jpg", "alt": "Krémová bramborová polévka se strouhaným křenem, slaninou a jarní cibulkou"}, {"id": "repa", "title": "Křen s červenou řepou (Mírův „Yperit“)", "veg": ["k"], "time": null, "kind": "omacky", "src": "Pro odvážné", "slav": false, "img": "assets/c937f5caa1a4a04d1c87a66172551ad6.jpg", "alt": "Oloupané kořeny křenu v bílé zapékací míse"}, {"id": "spagety", "title": "Špagety se zeleným chřestem, slaninou a česnekem", "veg": ["z"], "time": 25, "kind": "hlavni", "src": "Recept a foto: Klára Michalová (@sklarouvkuchyni)", "slav": false, "img": "assets/2a36b3d9151e2dbce69b7b11ed473e69.jpg", "alt": "Špagety se zeleným chřestem, slaninou a parmazánem"}, {"id": "gnocchi-brynza", "title": "Gnocchi s chřestem a brynzou", "veg": ["z"], "time": 15, "kind": "hlavni", "src": "Lenka Požárová", "slav": false, "img": "assets/e9a318dc7a82e3d776e8520385c157e2.jpg", "alt": "Gnocchi se zeleným chřestem, brynzou a slaninou"}, {"id": "zelny-salat", "title": "Zelný salát s chřestem, jablkem a koprem", "veg": ["z", "b"], "time": 10, "kind": "salat", "src": "Lenka Požárová", "slav": false, "img": "", "alt": ""}, {"id": "strouhany", "title": "Strouhaný křen", "veg": ["k"], "time": null, "kind": "omacky", "src": "Základ", "slav": false, "img": "assets/762fe9068c9020d6236aeb15c3cc740a.jpg", "alt": "Čerstvě nastrouhaný křen v misce, vedle kořen křenu a struhadlo"}, {"id": "jablecny", "title": "Jablečný křen", "veg": ["k"], "time": null, "kind": "omacky", "src": "K šunce a do sendvičů", "slav": false, "img": "assets/b2e8f51e7aa62544d62c089da7f3bc0a.jpg", "alt": "Jablečný křen ve skle, vedle jablka a kořen křenu"}, {"id": "salat-syrovy", "title": "Salát ze syrového bílého chřestu", "veg": ["b"], "time": 40, "kind": "salat", "src": "", "slav": false, "img": "", "alt": ""}, {"id": "nemecky", "title": "Bílý chřest se strouhankou na německý způsob", "veg": ["b"], "time": 20, "kind": "hlavni", "src": "", "slav": false, "img": "", "alt": ""}, {"id": "pesto", "title": "Chřestové pesto", "veg": ["z"], "time": 15, "kind": "omacky", "src": "Recept a foto: Lenka Požárová", "slav": false, "img": "assets/d7de3f357090d7fed1b9a145a67aa3d5.jpg", "alt": "Chřestové pesto (foto Lenka Požárová)"}, {"id": "mandlova", "title": "Mandlovo-smetanová křenová omáčka", "veg": ["k"], "time": null, "kind": "omacky", "src": "Staročeský recept", "slav": false, "img": "assets/c201a68be0b99705c2b5b3bdf6f21a91.jpg", "alt": "Mandlovo-smetanová křenová omáčka s knedlíkem a uzeným masem"}, {"id": "polevka-rericha", "title": "Chřestová polévka s řeřichou", "veg": ["z"], "time": 40, "kind": "polevka", "src": "", "slav": false, "img": "", "alt": ""}, {"id": "holandska", "title": "Chřest s holandskou omáčkou", "veg": ["b", "z"], "time": 20, "kind": "hlavni", "src": "", "slav": false, "img": "assets/1562d23e6df11f1f4041fd8a1a1e9ae6.jpg", "alt": "Bílý a zelený chřest s holandskou omáčkou a pažitkou na talíři"}, {"id": "poke", "title": "Domácí chřestový Poke Bowl", "veg": ["z"], "time": 35, "kind": "hlavni", "src": "Klára Michalová", "slav": false, "img": "assets/42a9f6874ab00b8348356220faf0fe95.jpg", "alt": "Poke bowl s lososem, zeleným chřestem, mrkví, ředkvičkami a mařinovou řasou"}, {"id": "dipy", "title": "Křenové dipy: dýňovo-křenová hořčice, hruškovo-jablečný křen, bylinkové pesto", "veg": ["k"], "time": null, "kind": "omacky", "src": "", "slav": false, "img": "assets/b2044f6f66bda08862563b1b98803098.jpg", "alt": "Tři křenové dipy – hruškový, bylinkové pesto a dýňový – vedle struhadla s křenem"}, {"id": "dezert", "title": "Rychlý dezert z chřestových špiček s jahodovo-tvarohovým krémem", "veg": ["b"], "time": 25, "kind": "sladke", "src": "", "slav": false, "img": "", "alt": ""}, {"id": "rizoto-zeleny", "title": "Rizoto se zeleným chřestem", "veg": ["z"], "time": 30, "kind": "hlavni", "src": "", "slav": false, "img": "assets/8734f68e691fdf32153bdac6962695de.jpg", "alt": "Krémové rizoto se zeleným chřestem a parmazánem"}, {"id": "zavin", "title": "Chřestový závin s rebarborou", "veg": ["b"], "time": 55, "kind": "sladke", "src": "", "slav": false, "img": "assets/bb999f3ceeaa1a9eb7c7ca1885baa6ff.jpg", "alt": "Naříznutý chřestový závin s rebarborou a mandlemi na prkénku"}];
+    const DEFAULT_VEG = ["b", "z"];
+    const FEATURED = "bily-brambory";
+    const PAGE = 12;
+    const s = this.state || {};
+    const sel = s.veg || DEFAULT_VEG;
+    const kind = s.kind || 'vse';
+    const quick = !!s.quick;
+    const slav = !!s.slav;
+    const top = !!s.top;
+    // Ukázková hodnocení – na webu je dodá databáze hlasů (průměr a počet).
+    const RATE = (id) => { let h = 0; for (let i = 0; i < id.length; i++) h = (h * 31 + id.charCodeAt(i)) % 9973; const n = h % 5 < 2 ? 0 : 1 + (h % 9); return { n: n, avg: n ? Math.round((3.7 + (h % 13) / 10) * 10) / 10 : 0 }; };
+    const limit = s.limit || PAGE;
+    const set = (patch) => this.setState(Object.assign({ veg: sel, kind: kind, quick: quick, slav: slav, top: top, limit: PAGE }, patch));
+    const vegOk = (r) => sel.length === 0 || r.veg.some((v) => sel.indexOf(v) >= 0);
+    const restOk = (r) => (kind === 'vse' || r.kind === kind) && (!quick || (r.time !== null && r.time <= 30)) && (!slav || r.slav);
+    const on = (yes) => yes
+      ? { pressed: 'true', bg: T.chipOn, fg: '#FFFFFF', border: T.chipOn }
+      : { pressed: 'false', bg: T.surface, fg: T.ink, border: T.line };
+    const allVeg = Object.assign({ count: String(DATA.filter(restOk).length), pick: () => set({ veg: [] }) }, on(sel.length === 0));
+    const vegs = VEG.map((v) => {
+      const isOn = sel.indexOf(v.id) >= 0;
+      const st = on(isOn);
+      if (!isOn) st.bg = v.chipTint;
+      return Object.assign({}, v, st, {
+        count: String(DATA.filter((r) => r.veg.indexOf(v.id) >= 0 && restOk(r)).length),
+        pick: () => set({ veg: isOn ? sel.filter((x) => x !== v.id) : sel.concat([v.id]) })
+      });
+    });
+    const kinds = [{ id: 'vse', label: 'Vše' }].concat(KINDS).map((k) => Object.assign({}, k, on(kind === k.id), { pick: () => set({ kind: k.id }) }));
+    const vegMap = {};
+    VEG.forEach((v) => { vegMap[v.id] = v; });
+    let list = DATA.filter((r) => vegOk(r) && restOk(r));
+    list.sort((a, b) => top ? (RATE(b.id).avg - RATE(a.id).avg) || (RATE(b.id).n - RATE(a.id).n) : (b.id === FEATURED) - (a.id === FEATURED));
+    const total = list.length;
+    const shown = list.slice(0, limit).map((r) => Object.assign({}, r, {
+      tags: r.veg.map((v) => vegMap[v]),
+      tile: vegMap[r.veg[0]].tile,
+      hasImg: !!r.img,
+      noImg: !r.img,
+      featured: r.id === FEATURED,
+      timeLabel: r.timeText ? r.timeText : (r.time === null ? '[čas]' : r.time + ' min'),
+      kindLabel: KIND1[r.kind]
+    }, (() => {
+      const q = RATE(r.id);
+      const full = Math.round(q.avg);
+      const hl = q.n === 1 ? 'hodnocení' : 'hodnocení';
+      return q.n === 0
+        ? { stars: '☆☆☆☆☆', rateTxt: '', rateCount: 'Zatím nehodnoceno', rateAria: 'Zatím nehodnoceno' }
+        : { stars: '★★★★★'.slice(0, full) + '☆☆☆☆☆'.slice(full), rateTxt: String(q.avg).replace('.', ','), rateCount: '(' + q.n + ')', rateAria: 'Hodnocení ' + String(q.avg).replace('.', ',') + ' z 5, ' + q.n + ' ' + hl };
+    })()));
+    const word = total === 1 ? 'recept' : (total >= 2 && total <= 4 ? 'recepty' : 'receptů');
+    const names = sel.length === 0 ? 'ze všech druhů zeleniny' : 's výběrem: ' + sel.map((v) => vegMap[v].label.toLowerCase()).join(', ');
+    const guides = GUIDES.filter((g) => sel.length === 0 || g.veg.some((v) => sel.indexOf(v) >= 0));
+    const filtered = !(sel.length === DEFAULT_VEG.length && sel.every((v) => DEFAULT_VEG.indexOf(v) >= 0)) || kind !== 'vse' || quick || slav || top;
+    const rest = total - shown.length;
+    return {
+      allVeg: allVeg, vegs: vegs, kinds: kinds,
+      quick: Object.assign({ pick: () => set({ quick: !quick }) }, on(quick)),
+      slav: Object.assign({ pick: () => set({ slav: !slav }) }, on(slav)),
+      top: Object.assign({ pick: () => set({ top: !top }), star: top ? '#F2C14E' : '#C28A1E' }, on(top)),
+      shown: shown, empty: total === 0,
+      summary: total + ' ' + word + ' ' + names,
+      filtered: filtered,
+      reset: () => this.setState({ veg: DEFAULT_VEG, kind: 'vse', quick: false, slav: false, top: false, limit: PAGE }),
+      hasMore: rest > 0,
+      moreLabel: 'Zobrazit další (' + rest + ')',
+      more: () => set({ limit: limit + PAGE }),
+      guides: guides, hasGuides: guides.length > 0
+    };
+  }
+}
+</script>
+</body>
+</html>
