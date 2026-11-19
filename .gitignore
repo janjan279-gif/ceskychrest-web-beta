@@ -1,0 +1,5 @@
+# Nikdy necommitovat klíče, hesla ani nastavení platební brány
+*.pem
+*.key
+config.php
+keys/

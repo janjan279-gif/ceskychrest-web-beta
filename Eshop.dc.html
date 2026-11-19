@@ -254,7 +254,19 @@ a{color:#2E4A26}a:hover{color:#1E1D19}
 <div style="display: flex; justify-content: space-between; align-items: baseline; padding-top: 12px; border-top: 2px solid #1E1D19">
 <span style="font-weight: 700">Celkem ({{count}} ks)</span><strong style="font-size: 22px">{{totalLabel}}</strong>
 </div>
+<sc-if value="{{simGate}}" hint-placeholder-val="{{ true }}">
 <button type="button" disabled="{{checkoutDisabled}}" onClick="{{checkout}}" style="min-height: 54px; border-radius: 999px; border: 0; background: {{checkoutBg}}; color: {{checkoutFg}}; font-family: inherit; font-size: 17px; font-weight: 700; cursor: pointer">{{checkoutLabel}}</button>
+</sc-if>
+<sc-if value="{{realGate}}" hint-placeholder-val="{{ false }}">
+<form method="post" action="{{gateUrl}}" style="margin: 0; display: flex; flex-direction: column">
+<sc-for list="{{gateFields}}" as="g" hint-placeholder-count="0">
+<input type="hidden" name="{{g.name}}" value="{{g.value}}">
+</sc-for>
+<input type="hidden" name="doprava" value="osobni">
+<input type="hidden" name="platba" value="karta">
+<button type="submit" disabled="{{checkoutDisabled}}" style="min-height: 54px; border-radius: 999px; border: 0; background: {{checkoutBg}}; color: {{checkoutFg}}; font-family: inherit; font-size: 17px; font-weight: 700; cursor: pointer">{{checkoutLabel}}</button>
+</form>
+</sc-if>
 <span style="font-size: 13px; line-height: 1.45; color: #4A4740">Platbu kartou zpracovává GP webpay (Global Payments), údaje o kartě k nám nechodí. Trvanlivé zboží; podrobnosti v obchodních podmínkách.</span>
 </div>
 </sc-if>
@@ -312,7 +324,7 @@ a{color:#2E4A26}a:hover{color:#1E1D19}
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"stav": {"editor": "enum", "options": ["spusteno", "pripravujeme"], "default": "pripravujeme", "section": "Stav e-shopu"}, "platby": {"editor": "enum", "options": ["testovaci", "ostre"], "default": "testovaci", "section": "Platby GP webpay"}, "$preview": {"width": 1440, "height": 1900}}'>
+<script type="text/x-dc" data-dc-script data-props='{"stav": {"editor": "enum", "options": ["spusteno", "pripravujeme"], "default": "pripravujeme", "section": "Stav e-shopu"}, "platby": {"editor": "enum", "options": ["testovaci", "ostre"], "default": "testovaci", "section": "Platby GP webpay"}, "brana": {"editor": "enum", "options": ["simulace", "testovaci-brana"], "default": "simulace", "section": "Platby GP webpay"}, "$preview": {"width": 1440, "height": 1900}}'>
 class Component extends DCLogic {
   renderVals() {
     const mode = this.props.stav ?? 'pripravujeme';
@@ -427,6 +439,10 @@ class Component extends DCLogic {
         const no = String(1001 + (st.orders || 0));
         this.setState({ orderNo: no, orders: (st.orders || 0) + 1, step: pay === 'card' ? 'gate' : 'done', result: pay === 'card' ? 'ok' : pay });
       },
+      realGate: live && pay === 'card' && (this.props.brana ?? 'simulace') === 'testovaci-brana',
+      simGate: !(live && pay === 'card' && (this.props.brana ?? 'simulace') === 'testovaci-brana'),
+      gateUrl: 'https://www.ceskychrest.cz/eshop-test/zaplatit.php',
+      gateFields: flat.filter((p) => cart[p.id] > 0).map((p) => ({ name: 'ks[' + p.id + ']', value: String(cart[p.id]) })),
       payTest: payTest, orderNo: orderNo, showGateInfo: payTest && viaGate,
       payCardChecked: pay === 'card', payTransferChecked: pay === 'transfer', payFarmChecked: pay === 'farm',
       setPayCard: () => this.setState({ pay: 'card' }),
