@@ -29,6 +29,11 @@ a{color:#2E4A26}a:hover{color:#1E1D19}
 </div>
 </header>
 
+<sc-if value="{{live}}" hint-placeholder-val="{{ true }}">
+<div style="background: #F2E6D2; color: #5A3E1C">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(16px, 4vw, 40px); padding-right: clamp(16px, 4vw, 40px); box-sizing: border-box; padding-top: 12px; padding-bottom: 12px; font-weight: 700; text-align: center">BETA – zkušební objednávky. Nic se neplatí ani neodesílá, platba kartou je jen simulace.</div>
+</div>
+</sc-if>
 <sc-if value="{{soon}}" hint-placeholder-val="{{ false }}">
 <div style="background: #BF935B; color: #1E1D19">
 <div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(16px, 4vw, 40px); padding-right: clamp(16px, 4vw, 40px); box-sizing: border-box; padding-top: 12px; padding-bottom: 12px; font-weight: 700; text-align: center">E-shop chystáme – už brzy. Nastavte si u produktů upozornění a dáme vám vědět, jakmile je bude možné objednat.</div>
@@ -241,7 +246,7 @@ a{color:#2E4A26}a:hover{color:#1E1D19}
 <fieldset style="margin: 0; border: 0; padding: 0; display: flex; flex-direction: column; gap: 8px">
 <legend style="font-weight: 700; font-size: 15px; padding: 0 0 8px">Doprava</legend>
 <label style="display: flex; gap: 10px; align-items: flex-start; padding: 12px; border-radius: 12px; border: 1px solid #E2DBCB; font-size: 15px; line-height: 1.4; cursor: pointer"><input type="radio" name="doprava" checked="{{pickupChecked}}" onChange="{{setPickup}}" style="width: 20px; height: 20px; margin: 0; accent-color: #2E4A26"><span><strong>Osobní odběr na farmě</strong><br><span style="color: #4A4740">Hostín u Vojkovic, v otevírací době</span></span></label>
-<label style="display: flex; gap: 10px; align-items: flex-start; padding: 12px; border-radius: 12px; border: 1px solid #E2DBCB; font-size: 15px; line-height: 1.4; cursor: pointer"><input type="radio" name="doprava" checked="{{shipChecked}}" onChange="{{setShip}}" style="width: 20px; height: 20px; margin: 0; accent-color: #2E4A26"><span><strong>Doručení – [DOPRAVCE]</strong><br><span style="color: #4A4740">[CENA DOPRAVY] · [DOBA DORUČENÍ]</span></span></label>
+<label style="display: flex; gap: 10px; align-items: flex-start; padding: 12px; border-radius: 12px; border: 1px solid #E2DBCB; font-size: 15px; line-height: 1.4; cursor: pointer"><input type="radio" name="doprava" checked="{{shipChecked}}" onChange="{{setShip}}" style="width: 20px; height: 20px; margin: 0; accent-color: #2E4A26"><span><strong>Doručení – kurýr (zkušební)</strong><br><span style="color: #4A4740">99 Kč · 2–3 pracovní dny</span></span></label>
 </fieldset>
 <fieldset style="margin: 0; border: 0; padding: 0; display: flex; flex-direction: column; gap: 8px">
 <legend style="font-weight: 700; font-size: 15px; padding: 0 0 8px">Platba</legend>
@@ -252,7 +257,7 @@ a{color:#2E4A26}a:hover{color:#1E1D19}
 </sc-if>
 </fieldset>
 <div style="display: flex; justify-content: space-between; align-items: baseline; padding-top: 12px; border-top: 2px solid #1E1D19">
-<span style="font-weight: 700">Celkem ({{count}} ks)</span><strong style="font-size: 22px">{{totalLabel}}</strong>
+<span style="font-weight: 700">Celkem ({{count}} ks){{shipNote}}</span><strong style="font-size: 22px">{{totalLabel}}</strong>
 </div>
 <button type="button" disabled="{{checkoutDisabled}}" onClick="{{checkout}}" style="min-height: 54px; border-radius: 999px; border: 0; background: {{checkoutBg}}; color: {{checkoutFg}}; font-family: inherit; font-size: 17px; font-weight: 700; cursor: pointer">{{checkoutLabel}}</button>
 <span style="font-size: 13px; line-height: 1.45; color: #4A4740">Platbu kartou zpracovává GP webpay (Global Payments), údaje o kartě k nám nechodí. Trvanlivé zboží; podrobnosti v obchodních podmínkách.</span>
@@ -312,10 +317,10 @@ a{color:#2E4A26}a:hover{color:#1E1D19}
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"stav": {"editor": "enum", "options": ["spusteno", "pripravujeme"], "default": "pripravujeme", "section": "Stav e-shopu"}, "platby": {"editor": "enum", "options": ["testovaci", "ostre"], "default": "testovaci", "section": "Platby GP webpay"}, "$preview": {"width": 1440, "height": 1900}}'>
+<script type="text/x-dc" data-dc-script data-props='{"stav": {"editor": "enum", "options": ["spusteno", "pripravujeme"], "default": "spusteno", "section": "Stav e-shopu"}, "platby": {"editor": "enum", "options": ["testovaci", "ostre"], "default": "testovaci", "section": "Platby GP webpay"}, "$preview": {"width": 1440, "height": 1900}}'>
 class Component extends DCLogic {
   renderVals() {
-    const mode = this.props.stav ?? 'pripravujeme';
+    const mode = this.props.stav ?? 'spusteno';
     const live = mode === 'spusteno';
     const st = this.state || {};
     const cart = st.cart || {};
@@ -397,6 +402,7 @@ class Component extends DCLogic {
         pick: () => this.setState({ cat: f.id })
       });
     });
+    const shipFee = (ship === 'ship' && lines.length > 0) ? 99 : 0;
     const can = live && count > 0 && known;
     const orderNo = st.orderNo || '1001';
     const result = st.result || 'ok';
@@ -414,14 +420,15 @@ class Component extends DCLogic {
       live: live, soon: !live, items: items, show: show, filters: filters,
       lines: lines, count: count, empty: lines.length === 0,
       zeliSizes: zeliSizes, zeliPrice: zeliCur.price + ' Kč', zeliSize: zeliCur.size,
-      totalLabel: lines.length === 0 ? '0 Kč' : (known ? sum + ' Kč' : '[CELKEM] Kč'),
+      totalLabel: lines.length === 0 ? '0 Kč' : (known ? (sum + shipFee) + ' Kč' : '[CELKEM] Kč'),
+      shipNote: shipFee ? ' vč. dopravy 99 Kč' : '',
       pickupChecked: ship === 'pickup', shipChecked: ship === 'ship',
       setPickup: () => this.setState({ ship: 'pickup' }),
       setShip: () => this.setState({ ship: 'ship' }),
       checkoutDisabled: !can,
       checkoutBg: can ? '#2E4A26' : '#E2DBCB',
       checkoutFg: can ? '#FFFFFF' : '#4A4740',
-      checkoutLabel: !live ? 'Objednávky chystáme – už brzy' : (pay === 'card' ? 'Zaplatit kartou ' + (known ? sum + ' Kč' : '') : 'Odeslat objednávku'),
+      checkoutLabel: !live ? 'Objednávky chystáme – už brzy' : (pay === 'card' ? 'Zaplatit kartou ' + (known ? (sum + shipFee) + ' Kč' : '') : 'Odeslat objednávku'),
       checkout: () => {
         if (!can) { return; }
         const no = String(1001 + (st.orders || 0));
