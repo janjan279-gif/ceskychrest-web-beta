@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <title>Český chřest a Mělnický křen – rozcestník</title>
 <script src="./support.js"></script>
+<script src="./gdpr.js" defer></script>
 </head>
 <body>
 <x-dc>
@@ -207,12 +208,14 @@ a{color:#2E4A26}a:hover{color:#1E1D19}
 <h2 style="margin: 0; font-family: 'Bricolage Grotesque', 'Helvetica Neue', Helvetica, sans-serif; font-weight: 800; font-size: 34px; line-height: 1.05; letter-spacing: -0.02em">Novinky z farmy e-mailem</h2>
 <span style="font-size: 17px">Start sezóny chřestu, slavnosti, nové produkty v e-shopu. Pár e-mailů za rok.</span>
 </div>
-<div style="display: flex; flex-direction: column; gap: 8px; flex: 1 1 360px; max-width: 520px">
+<div data-nl style="display: flex; flex-direction: column; gap: 8px; flex: 1 1 360px; max-width: 520px">
 <label for="r-email" style="font-weight: 700; font-size: 15px">Váš e-mail</label>
 <div style="display: flex; gap: 8px; flex-wrap: wrap">
 <input id="r-email" type="email" placeholder="jmeno@email.cz" style="flex: 1 1 220px; min-height: 52px; padding: 0 18px; border-radius: 999px; border: 2px solid #1E1D19; background: #FFFFFF; font-family: inherit; font-size: 16px; color: #1E1D19; box-sizing: border-box">
 <button type="button" style="min-height: 52px; padding: 0 26px; border-radius: 999px; border: 0; background: #1E1D19; color: #FFFFFF; font-family: inherit; font-size: 16px; font-weight: 700; cursor: pointer">Odebírat</button>
 </div>
+<label style="display: flex; gap: 8px; align-items: flex-start; font-size: 14px; line-height: 1.4"><input type="checkbox" style="width: 18px; height: 18px; margin: 1px 0 0; flex: none; accent-color: #1E1D19"><span>Souhlasím se zasíláním novinek z farmy e-mailem. Souhlas mohu kdykoli odvolat odhlášením v e-mailu. Údaje zpracovává Český chřest, s.r.o., podrobnosti v <a href="Ochrana-udaju.dc.html" style="color: inherit; font-weight: 700">zásadách ochrany osobních údajů</a>.</span></label>
+<span data-nl-msg role="status" style="font-size: 14px"></span>
 </div>
 </div>
 </section>
@@ -247,7 +250,7 @@ a{color:#2E4A26}a:hover{color:#1E1D19}
 </div>
 <div style="border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: 20px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 14px; opacity: 0.8">
 <span>© Český chřest, s.r.o.</span>
-<span>Obchodní podmínky · Ochrana osobních údajů · Cookies</span>
+<span>Obchodní podmínky · <a href="Ochrana-udaju.dc.html">Ochrana osobních údajů</a> · <a href="Ochrana-udaju.dc.html#cookies" data-cookie-settings>Nastavení cookies</a></span>
 </div>
 </div>
 </footer>
